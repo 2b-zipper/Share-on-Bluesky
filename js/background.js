@@ -33,7 +33,7 @@ chrome.commands.onCommand.addListener((command) => {
 function post(url, text) {
     chrome.storage.local.get(['openas'], (result) => {
         let openas = result.openas || "popup";
-        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(text || "") + "%0A" + encodeURIComponent(url || "");
+        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(text || "") + " %0A" + encodeURIComponent(url || "");
 
         if (openas === "popup") {
             chrome.windows.create({ url: postUrl, width: 600, height: 430, type: "popup" });
