@@ -6,7 +6,7 @@
 
 ## Features
 This extension has almost or exactly the same functionality as Share on Twitter.
-- Share the current tab on Bluesky
+- Share the current tab on Bluesky (also available with Alt+S)
 - Share links on Bluesky
 - Share selected text on Bluesky
 - Share images on Bluesky
