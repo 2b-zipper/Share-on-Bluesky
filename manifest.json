@@ -7,6 +7,8 @@
     "default_title": "Share on Bluesky"
   },
   "description": "Share current tab, links and selected text on Bluesky. Inspired by “Share on Twitter”.",
+  "options_page": "options.html",
+  "version": "0.1.0",
   "icons": {
     "128": "static/128.png",
     "16": "static/16.png",
@@ -22,6 +24,11 @@
     "scripting",
     "storage"
   ],
-  "options_page": "options.html",
-  "version": "0.0.1"
+  "commands": {
+    "share-current-tab": {
+      "suggested_key": {
+        "default": "Alt+S"
+      }
+    }
+  }
 }

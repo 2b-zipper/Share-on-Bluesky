@@ -21,6 +21,15 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
 });
 
+chrome.commands.onCommand.addListener((command) => {
+    if (command === "share-current-tab") {
+        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+            let activeTab = tabs[0];
+            post(activeTab.url, activeTab.title);
+        });
+    }
+});
+
 function post(url, text) {
     chrome.storage.local.get(['openas'], (result) => {
         let openas = result.openas || "popup";
