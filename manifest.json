@@ -8,7 +8,7 @@
   },
   "description": "Share current tab, links and selected text on Bluesky. Inspired by “Share on Twitter”.",
   "options_page": "options.html",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icons": {
     "128": "static/128.png",
     "16": "static/16.png",
