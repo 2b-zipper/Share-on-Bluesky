@@ -12,3 +12,5 @@ This extension has almost or exactly the same functionality as Share on Twitter.
 - Share images on Bluesky
 - Choose to open the share window as a popup or a new tab
 
+## License
+This project is licensed under the GNU General Public License v3.0. See the [LICENSE](./LICENSE) file for details.
