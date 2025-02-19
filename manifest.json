@@ -28,7 +28,8 @@
     "share-current-tab": {
       "suggested_key": {
         "default": "Alt+S"
-      }
+      },
+      "description": "Share the current tab on Bluesky"
     }
   }
 }
