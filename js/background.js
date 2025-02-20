@@ -32,9 +32,9 @@ chrome.commands.onCommand.addListener((command) => {
     }
 });
 
-chrome.runtime.onMessage.addListener((message, sendResponse) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'checkForUpdates') {
-        checkForUpdates()
+        checkForUpdates(true)
             .then(() => sendResponse({ success: true }))
             .catch(() => sendResponse({ success: false }));
         return true;
