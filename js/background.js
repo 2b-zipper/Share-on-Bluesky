@@ -1,3 +1,5 @@
+importScripts('check_updates.js');
+
 chrome.action.onClicked.addListener((tab) => {
     post(tab.url);
 });
@@ -27,6 +29,15 @@ chrome.commands.onCommand.addListener((command) => {
             let activeTab = tabs[0];
             post(activeTab.url, activeTab.title);
         });
+    }
+});
+
+chrome.runtime.onMessage.addListener((message, sendResponse) => {
+    if (message.action === 'checkForUpdates') {
+        checkForUpdates()
+            .then(() => sendResponse({ success: true }))
+            .catch(() => sendResponse({ success: false }));
+        return true;
     }
 });
 

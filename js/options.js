@@ -11,4 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Options saved');
         });
     });
+
+    document.getElementById('check-updates').addEventListener('click', () => {
+        chrome.runtime.sendMessage({ action: 'checkForUpdates' }, (response) => {
+            if (response.success) {
+                alert('Update check completed.');
+            } else {
+                alert('Error checking for updates.');
+            }
+        });
+    });
 });
