@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.getElementById('save').addEventListener('click', () => {
-        const openas = document.querySelector('input[name="openas"]:checked').value;
-        chrome.storage.local.set({ openas }, () => {
-            displayMessage('Options saved');
+    document.querySelectorAll('input[name="openas"]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+            const openas = document.querySelector('input[name="openas"]:checked').value;
+            chrome.storage.local.set({ openas }, () => {
+                displayMessage('Options saved.');
+            });
         });
     });
 

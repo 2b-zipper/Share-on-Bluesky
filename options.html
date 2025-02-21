@@ -14,13 +14,17 @@
             display: block;
             margin-bottom: 10px;
         }
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
         button {
-            margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
+            flex-shrink: 0;
         }
         #message {
-            margin-top: 20px;
+            margin-left: 20px;
             font-size: 16px;
             color: green;
         }
@@ -34,9 +38,10 @@
     <label>
         <input type="radio" name="openas" value="tab"> Open as Tab
     </label>
-    <button id="save">Save</button>
-    <button id="check-updates">Check for updates</button>
-    <div id="message"></div>
+    <div class="button-container">
+        <button id="check-updates">Check for updates</button>
+        <div id="message"></div>
+    </div>
     <script src="js/options.js"></script>
 </body>
 </html>
