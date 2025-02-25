@@ -11,7 +11,7 @@
   "options_ui": {
     "page": "options.html"
   },
-  "version": "0.3.0",
+  "version": "0.3.1",
   "icons": {
     "16": "static/16.png",
     "32": "static/32.png",
