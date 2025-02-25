@@ -1,7 +1,7 @@
 importScripts('check_updates.js');
 
 chrome.action.onClicked.addListener((tab) => {
-    post(tab.url);
+    post(tab.url, tab.title);
 });
 
 chrome.contextMenus.removeAll(() => {
@@ -42,9 +42,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 function post(url, text) {
-    chrome.storage.local.get(['openas'], (result) => {
+    chrome.storage.local.get(['openas', 'newline'], (result) => {
         let openas = result.openas || "popup";
-        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(text || "") + " %0A" + encodeURIComponent(url || "");
+        let newline = result.newline ? "%0A" : " ";
+        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(text || "") + newline + encodeURIComponent(url || "");
 
         if (openas === "popup") {
             chrome.windows.create({ url: postUrl, width: 600, height: 430, type: "popup" });

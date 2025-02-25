@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.storage.local.get(['openas'], (result) => {
+    chrome.storage.local.get(['openas', 'newline'], (result) => {
         if (result.openas) {
             document.querySelector(`input[name="openas"][value="${result.openas}"]`).checked = true;
+        }
+        if (result.newline) {
+            document.getElementById('newline').checked = result.newline;
         }
     });
 
@@ -11,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
             chrome.storage.local.set({ openas }, () => {
                 displayMessage('Options saved.');
             });
+        });
+    });
+
+    document.getElementById('newline').addEventListener('change', () => {
+        const newline = document.getElementById('newline').checked;
+        chrome.storage.local.set({ newline }, () => {
+            displayMessage('Options saved.');
         });
     });
 
