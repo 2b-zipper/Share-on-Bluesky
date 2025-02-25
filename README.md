@@ -1,4 +1,4 @@
-# Share on Bluesky
+# <img width="32" height="32" src="./static/128.png" /> Share on Bluesky
  Share current tab, links and selected text on Bluesky. Inspired by “[Share on Twitter](https://chromewebstore.google.com/detail/share-on-twitter/gkjgmeeoldebbdoehhngapnlfmdbmiie)”.
 
  ## What's this?
