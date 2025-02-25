@@ -1,6 +1,6 @@
 const GITHUB_API_URL = 'https://api.github.com/repos/2b-zipper/Share-on-Bluesky/releases/latest';
 
-chrome.alarms.create('checkForUpdates', { periodInMinutes: 1440 });
+chrome.alarms.create('checkForUpdates', { periodInMinutes: 360 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === 'checkForUpdates') {
