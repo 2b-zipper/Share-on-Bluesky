@@ -15,11 +15,11 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "post-page") {
         post(tab.url, tab.title);
     } else if (info.menuItemId === "post-link") {
-        post(info.linkUrl, "Link: " + (info.linkText || ""));
+        post(info.linkUrl, "Link: " + (info.linkText || ""), true);
     } else if (info.menuItemId === "post-selection") {
         post(tab.url, info.selectionText);
     } else if (info.menuItemId === "post-image") {
-        post(info.srcUrl, "Image: ");
+        post(info.srcUrl, "Image: ", true);
     }
 });
 
@@ -41,10 +41,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 
-function post(url, text) {
+function post(url, text, isLinkOrImage = false) {
     chrome.storage.local.get(['openas', 'newline'], (result) => {
         let openas = result.openas || "popup";
-        let newline = result.newline ? "%0A" : " ";
+        let newline = (result.newline && !isLinkOrImage) ? "%0A" : " ";
         let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(text || "") + newline + encodeURIComponent(url || "");
 
         if (openas === "popup") {
