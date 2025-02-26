@@ -17,9 +17,6 @@ function checkForUpdates(showNotification) {
         .then(response => response.json())
         .then(data => {
             let latestVersion = data.tag_name;
-            if (latestVersion.startsWith('v')) {
-                latestVersion = latestVersion.substring(1);
-            }
             return getCurrentVersion().then(currentVersion => {
                 if (isNewerVersion(latestVersion, currentVersion)) {
                     if (showNotification) {
