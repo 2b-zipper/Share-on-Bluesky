@@ -4,12 +4,12 @@ chrome.alarms.create('checkForUpdates', { periodInMinutes: 360 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === 'checkForUpdates') {
-        checkForUpdates(true);
+        checkForUpdates(false);
     }
 });
 
 chrome.runtime.onStartup.addListener(() => {
-    checkForUpdates(true);
+    checkForUpdates(false);
 });
 
 function checkForUpdates(showNotification) {
@@ -19,25 +19,23 @@ function checkForUpdates(showNotification) {
             let latestVersion = data.tag_name;
             return getCurrentVersion().then(currentVersion => {
                 if (isNewerVersion(latestVersion, currentVersion)) {
-                    if (showNotification) {
-                        chrome.notifications.create({
-                            type: 'basic',
-                            iconUrl: chrome.runtime.getURL('images/128.png'),
-                            title: 'Share on Bluesky Update',
-                            message: `A new version (${latestVersion}) is available! Please update your extension.`,
-                            buttons: [{ title: 'Update Now' }],
-                            priority: 2
-                        });
-                    }
+                    chrome.notifications.create({
+                        type: 'basic',
+                        iconUrl: chrome.runtime.getURL('images/128.png'),
+                        title: 'Share on Bluesky Update',
+                        message: `A new version (${latestVersion}) is available! Please update your extension.`,
+                        buttons: [{ title: 'Update Now' }],
+                        priority: 2
+                    });
                 } else {
-                    if (showNotification && !chrome.runtime.onStartup.hasListener()) {
+                    if (showNotification) {
                         chrome.notifications.create({
                             type: 'basic',
                             iconUrl: chrome.runtime.getURL('images/128.png'),
                             title: 'Share on Bluesky',
                             message: 'You are using the latest version.',
                             priority: 2
-                       });
+                        });
                     }
                 }
             });
