@@ -11,6 +11,7 @@ This extension has almost or exactly the same functionality as Share on Twitter.
 - Share selected text on Bluesky
 - Share images on Bluesky
 - Choose to open the share window as a popup or a new tab
+- Option to add a newline between the title and URL when sharing
 
 ## Installation
 ### From CRX file
