@@ -4,7 +4,7 @@ chrome.alarms.create('checkForUpdates', { periodInMinutes: 360 });
 
 chrome.alarms.onAlarm.addListener((alarm) => {
     if (alarm.name === 'checkForUpdates') {
-        checkForUpdates(false);
+        checkForUpdates(true);
     }
 });
 
