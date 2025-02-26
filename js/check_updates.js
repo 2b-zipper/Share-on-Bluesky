@@ -25,7 +25,7 @@ function checkForUpdates(showNotification) {
                     if (showNotification) {
                         chrome.notifications.create({
                             type: 'basic',
-                            iconUrl: chrome.runtime.getURL('static/128.png'),
+                            iconUrl: chrome.runtime.getURL('images/128.png'),
                             title: 'Share on Bluesky Update',
                             message: `A new version (${latestVersion}) is available! Please update your extension.`,
                             buttons: [{ title: 'Update Now' }],
@@ -36,7 +36,7 @@ function checkForUpdates(showNotification) {
                     if (showNotification) {
                         chrome.notifications.create({
                             type: 'basic',
-                            iconUrl: chrome.runtime.getURL('static/128.png'),
+                            iconUrl: chrome.runtime.getURL('images/128.png'),
                             title: 'Share on Bluesky',
                             message: 'You are using the latest version.',
                             priority: 2

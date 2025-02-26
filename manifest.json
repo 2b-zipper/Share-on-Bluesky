@@ -3,7 +3,7 @@
     "service_worker": "js/background.js"
   },
   "action": {
-    "default_icon": "static/128.png",
+    "default_icon": "images/128.png",
     "default_title": "Share on Bluesky"
   },
   "description": "Share current tab, links and selected text on Bluesky. Inspired by “Share on Twitter”.",
@@ -13,10 +13,10 @@
   },
   "version": "0.3.1",
   "icons": {
-    "16": "static/16.png",
-    "32": "static/32.png",
-    "64": "static/64.png",
-    "128": "static/128.png"
+    "16": "images/16.png",
+    "32": "images/32.png",
+    "64": "images/64.png",
+    "128": "images/128.png"
   },
   "manifest_version": 3,
   "name": "Share on Bluesky",
