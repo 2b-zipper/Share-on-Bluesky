@@ -9,7 +9,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 chrome.runtime.onStartup.addListener(() => {
-    checkForUpdates(false);
+    checkForUpdates(true);
 });
 
 function checkForUpdates(showNotification) {
@@ -30,7 +30,7 @@ function checkForUpdates(showNotification) {
                         });
                     }
                 } else {
-                    if (showNotification) {
+                    if (showNotification && !chrome.runtime.onStartup.hasListener()) {
                         chrome.notifications.create({
                             type: 'basic',
                             iconUrl: chrome.runtime.getURL('images/128.png'),
