@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (result.includeTitle !== undefined) {
             document.getElementById('includeTitle').checked = result.includeTitle;
+            document.getElementById('newline').disabled = !result.includeTitle;
         }
     });
 
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('includeTitle').addEventListener('change', () => {
         const includeTitle = document.getElementById('includeTitle').checked;
+        document.getElementById('newline').disabled = !includeTitle;
         chrome.storage.sync.set({ includeTitle }, () => {
             displayMessage('Options saved.');
         });

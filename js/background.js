@@ -44,8 +44,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 function post(url, text, isLinkOrImage = false) {
     chrome.storage.sync.get(['openas', 'newline', 'includeTitle'], (result) => {
         let openas = result.openas || "popup";
-        let newline = (result.newline && !isLinkOrImage) ? "%0A" : " ";
         let includeTitle = result.includeTitle !== false;
+        let newline = (result.newline && includeTitle && !isLinkOrImage) ? "\n" : " ";
         let postText = includeTitle ? (text || "") + newline : "";
         let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(postText) + encodeURIComponent(url || "");
 
