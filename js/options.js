@@ -11,6 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    chrome.commands.getAll((commands) => {
+        const shareCurrentTabCommand = commands.find(command => command.name === 'share-current-tab');
+        if (shareCurrentTabCommand) {
+            document.getElementById('shortcut-value').textContent = shareCurrentTabCommand.shortcut;
+        }
+    });
+
     document.querySelectorAll('input[name="openas"]').forEach((radio) => {
         radio.addEventListener('change', () => {
             const openas = document.querySelector('input[name="openas"]:checked').value;
@@ -42,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayMessage('Error checking for updates.');
             }
         });
+    });
+
+    document.getElementById('change-shortcut').addEventListener('click', () => {
+        chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
     });
 });
 
