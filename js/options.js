@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.storage.local.get(['openas', 'newline', 'includeTitle'], (result) => {
+    chrome.storage.sync.get(['openas', 'newline', 'includeTitle'], (result) => {
         if (result.openas) {
             document.querySelector(`input[name="openas"][value="${result.openas}"]`).checked = true;
         }
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('input[name="openas"]').forEach((radio) => {
         radio.addEventListener('change', () => {
             const openas = document.querySelector('input[name="openas"]:checked').value;
-            chrome.storage.local.set({ openas }, () => {
+            chrome.storage.sync.set({ openas }, () => {
                 displayMessage('Options saved.');
             });
         });
@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('newline').addEventListener('change', () => {
         const newline = document.getElementById('newline').checked;
-        chrome.storage.local.set({ newline }, () => {
+        chrome.storage.sync.set({ newline }, () => {
             displayMessage('Options saved.');
         });
     });
 
     document.getElementById('includeTitle').addEventListener('change', () => {
         const includeTitle = document.getElementById('includeTitle').checked;
-        chrome.storage.local.set({ includeTitle }, () => {
+        chrome.storage.sync.set({ includeTitle }, () => {
             displayMessage('Options saved.');
         });
     });

@@ -42,7 +42,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 function post(url, text, isLinkOrImage = false) {
-    chrome.storage.local.get(['openas', 'newline', 'includeTitle'], (result) => {
+    chrome.storage.sync.get(['openas', 'newline', 'includeTitle'], (result) => {
         let openas = result.openas || "popup";
         let newline = (result.newline && !isLinkOrImage) ? "%0A" : " ";
         let includeTitle = result.includeTitle !== false;
