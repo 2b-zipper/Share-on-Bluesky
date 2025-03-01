@@ -42,10 +42,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 function post(url, text, isLinkOrImage = false) {
-    chrome.storage.local.get(['openas', 'newline'], (result) => {
+    chrome.storage.local.get(['openas', 'newline', 'includeTitle'], (result) => {
         let openas = result.openas || "popup";
         let newline = (result.newline && !isLinkOrImage) ? "%0A" : " ";
-        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(text || "") + newline + encodeURIComponent(url || "");
+        let includeTitle = result.includeTitle !== false;
+        let postText = includeTitle ? (text || "") + newline : "";
+        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(postText) + encodeURIComponent(url || "");
 
         if (openas === "popup") {
             chrome.windows.create({ url: postUrl, width: 600, height: 430, type: "popup" });

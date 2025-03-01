@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    chrome.storage.local.get(['openas', 'newline'], (result) => {
+    chrome.storage.local.get(['openas', 'newline', 'includeTitle'], (result) => {
         if (result.openas) {
             document.querySelector(`input[name="openas"][value="${result.openas}"]`).checked = true;
         }
         if (result.newline) {
             document.getElementById('newline').checked = result.newline;
+        }
+        if (result.includeTitle !== undefined) {
+            document.getElementById('includeTitle').checked = result.includeTitle;
         }
     });
 
@@ -20,6 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('newline').addEventListener('change', () => {
         const newline = document.getElementById('newline').checked;
         chrome.storage.local.set({ newline }, () => {
+            displayMessage('Options saved.');
+        });
+    });
+
+    document.getElementById('includeTitle').addEventListener('change', () => {
+        const includeTitle = document.getElementById('includeTitle').checked;
+        chrome.storage.local.set({ includeTitle }, () => {
             displayMessage('Options saved.');
         });
     });
