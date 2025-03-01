@@ -1,5 +1,5 @@
 {
-    "background": {
+  "background": {
     "service_worker": "js/background.js"
   },
   "action": {
