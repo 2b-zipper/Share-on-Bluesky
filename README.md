@@ -7,8 +7,8 @@ This is a chrome extension I created for my personal use around June 2024. I'm p
 ## Features
 This extension has enhanced functionality compared to Share on Twitter.
 - Share the current tab on Bluesky (also available with Alt+S)
-- Share links on Bluesky
 - Share selected text on Bluesky
+- Share links on Bluesky
 - Share images on Bluesky
 - Choose to open the share window as a popup or a new tab
 - Option to add a newline between the title and URL when sharing
