@@ -14,10 +14,10 @@ chrome.contextMenus.removeAll(() => {
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "post-page") {
         post(tab.url, tab.title);
-    } else if (info.menuItemId === "post-link") {
-        post(info.linkUrl, "Link:" + (info.linkText || ""), true);
     } else if (info.menuItemId === "post-selection") {
         post(tab.url, info.selectionText);
+    } else if (info.menuItemId === "post-link") {
+        post(info.linkUrl, "Link:" + (info.linkText || ""), true);
     } else if (info.menuItemId === "post-image") {
         post(info.srcUrl, "Image:", true);
     }
