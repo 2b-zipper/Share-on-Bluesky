@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     chrome.commands.getAll((commands) => {
         const shareCurrentTabCommand = commands.find(command => command.name === 'share-current-tab');
-        if (shareCurrentTabCommand) {
+        if (shareCurrentTabCommand && shareCurrentTabCommand.shortcut) {
             document.getElementById('shortcut-value').textContent = shareCurrentTabCommand.shortcut;
+        } else {
+            document.getElementById('shortcut-value').textContent = 'None';
         }
     });
 
