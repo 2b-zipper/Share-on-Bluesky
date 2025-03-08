@@ -6,8 +6,8 @@ chrome.action.onClicked.addListener((tab) => {
 
 chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({"title": "Share page on Bluesky", "contexts":["page"], "id": "post-page"});
-    chrome.contextMenus.create({"title": "Share link on Bluesky", "contexts":["link"], "id": "post-link"});
     chrome.contextMenus.create({"title": "Share selection on Bluesky", "contexts":["selection"], "id": "post-selection"});
+    chrome.contextMenus.create({"title": "Share link on Bluesky", "contexts":["link"], "id": "post-link"});
     chrome.contextMenus.create({"title": "Share image on Bluesky", "contexts":["image"], "id": "post-image"});
 });
 
