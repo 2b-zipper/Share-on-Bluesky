@@ -46,8 +46,8 @@ function post(url, text, isLinkOrImage = false) {
         let openas = result.openas || "popup";
         let includeTitle = result.includeTitle !== false;
         let newline = (result.newline && includeTitle && !isLinkOrImage) ? "\n" : " ";
-        let postText = includeTitle ? (text || "") + newline : "";
-        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(postText) + encodeURIComponent(url || "");
+        let postText = includeTitle ? (text || "undefined") + newline : "";
+        let postUrl = "https://bsky.app/intent/compose?text=" + encodeURIComponent(postText) + encodeURIComponent(url || "undefined");
 
         if (openas === "popup") {
             chrome.windows.create({ url: postUrl, width: 600, height: 430, type: "popup" });
