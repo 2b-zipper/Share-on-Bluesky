@@ -14,6 +14,9 @@ This extension has enhanced functionality compared to Share on Twitter.
 - Option to add a newline between the title and URL when sharing
 
 ## Installation
+### From Chrome Web Store
+This extension is currently under review by the Chrome Web Store. Once approved, it will be available for easy installation from the official store.
+
 ### From CRX file
 1. [Download the latest CRX release](https://github.com/2b-zipper/Share-on-Bluesky/releases/latest) of the extension.
 2. Open your Chromium-based browser and go to `chrome://extensions/`.
