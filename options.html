@@ -2,96 +2,72 @@
 <html>
 <head>
     <title>Share on Bluesky Options</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #1c1c1c;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-            user-select: none;
-        }
-        .container {
-            background: #282828;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 320px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #ffffff;
-        }
-        .option-group {
-            text-align: left;
-            margin-bottom: 15px;
-        }
-        label {
-            display: flex;
-            align-items: center;
-            font-size: 16px;
-            margin: 7px 0;
-            cursor: pointer;
-        }
-        input[type="radio"], input[type="checkbox"] {
-            margin-right: 12px;
-        }
-        button {
-            background-color: #008cff;
-            color: white;
-            border: none;
-            padding: 12px 18px;
-            font-size: 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.4s;
-            margin-top: 12px;
-        }
-        button:hover {
-            background-color: #0070cc;
-        }
-        .shortcut-key {
-            margin-top: 18px;
-            font-size: 14px;
-        }
-        .shortcut-key button {
-            background: none;
-            border: none;
-            color: #008cff;
-            text-decoration: underline;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .shortcut-key button:hover {
-            color: #00aaff;
-        }
-        #message {
-            height: 6px;
-            margin-top: 12px;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="options.css">
 </head>
 <body>
+    <div id="message"></div>
     <div class="container">
-        <h1>Share on Bluesky Options</h1>
-        <div class="option-group">
-            <label><input type="radio" name="openas" value="popup" checked> Open as Popup</label>
-            <label><input type="radio" name="openas" value="tab"> Open as Tab</label>
+        <div class="header">
+            <div class="logo">
+                <img src="images/128.png" alt="Share on Bluesky" />
+            </div>
+            <h1>Share on Bluesky</h1>
+            <div class="subtitle">Configure your sharing preferences</div>
         </div>
-        <label><input type="checkbox" id="includeTitle" checked> Include title in share</label>
-        <label><input type="checkbox" id="newline"> Add newline between title and URL</label>
-        <button id="check-updates">Check for updates</button>
-        <div id="message"></div>
-        <div class="shortcut-key">
-            <strong>Current Shortcut Key:</strong> <span id="shortcut-value">Alt+S</span><br>
-            <button id="change-shortcut">Change Shortcut Key</button>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <div class="section-title">Opening Behavior</div>
+                    <div class="option-group vertical">
+                        <div class="radio-option" data-value="popup">
+                            <input type="radio" name="openas" value="popup" id="popup-option" checked>
+                            <div>
+                                <div class="option-label">Open as Popup</div>
+                                <div class="option-description">Opens in a small focused window for quick sharing</div>
+                            </div>
+                        </div>
+                        <div class="radio-option" data-value="tab">
+                            <input type="radio" name="openas" value="tab" id="tab-option">
+                            <div>
+                                <div class="option-label">Open as Tab</div>
+                                <div class="option-description">Opens in a new browser tab with full features</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section">
+                    <div class="section-title">Content Options</div>
+                    <div class="option-group vertical">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="includeTitle" checked>
+                            <div>
+                                <div class="option-label">Include page title</div>
+                                <div class="option-description">Add the webpage title to your post for better context</div>
+                            </div>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="newline">
+                            <div>
+                                <div class="option-label">Add line break</div>
+                                <div class="option-description">Separate title and URL with a new line for readability</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Keyboard Shortcut</div>
+            <div class="shortcut-section">
+                <div class="shortcut-label">Current shortcut key</div>
+                <div class="shortcut-value" id="shortcut-value">Alt+S</div><br>
+                <button class="shortcut-button" id="change-shortcut">Change Shortcut</button>
+            </div>
         </div>
     </div>
     <script src="js/options.js"></script>

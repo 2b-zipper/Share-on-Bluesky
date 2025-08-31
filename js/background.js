@@ -32,15 +32,6 @@ chrome.commands.onCommand.addListener((command) => {
     }
 });
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'checkForUpdates') {
-        checkForUpdates(true)
-            .then(() => sendResponse({ success: true }))
-            .catch(() => sendResponse({ success: false }));
-        return true;
-    }
-});
-
 function post(url, text, isLinkOrImage = false) {
     chrome.storage.sync.get(['openas', 'newline', 'includeTitle'], (result) => {
         let openas = result.openas || "popup";

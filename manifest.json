@@ -25,8 +25,7 @@
     "activeTab",
     "tabs",
     "storage",
-    "notifications",
-    "alarms"
+    "notifications"
   ],
   "commands": {
     "share-current-tab": {
