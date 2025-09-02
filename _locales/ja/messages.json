@@ -6,7 +6,7 @@
     "message": "Share on Bluesky"
   },
   "options_subtitle": {
-    "message": "共有設定を設定する"
+    "message": "シェア設定の変更"
   },
   "window_behavior": {
     "message": "ウィンドウの開き方"
@@ -15,7 +15,7 @@
     "message": "ポップアップで開く"
   },
   "popup_description": {
-    "message": "すぐに共有できる小さなウィンドウで開きます"
+    "message": "すぐにシェアできる小さなウィンドウで開きます"
   },
   "tab_option": {
     "message": "新しいタブで開く"
@@ -33,10 +33,10 @@
     "message": "投稿にWebページのタイトルを追加します"
   },
   "add_line_break": {
-    "message": "タイトルとURLの間に改行を入れる"
+    "message": "改行を入れる"
   },
   "add_line_break_description": {
-    "message": "改行を入れて投稿を読みやすくします"
+    "message": "タイトルとURLの間に改行を入れて投稿を読みやすくします"
   },
   "keyboard_shortcut": {
     "message": "キーボードショートカット"
