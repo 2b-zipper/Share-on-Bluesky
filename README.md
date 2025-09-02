@@ -1,5 +1,5 @@
 # <img width="32" height="32" src="./images/128.png" /> Share on Bluesky
-Share current tab, links and selected text on Bluesky. Inspired by “[Share on Twitter](https://chromewebstore.google.com/detail/share-on-twitter/gkjgmeeoldebbdoehhngapnlfmdbmiie)”.
+Easily share current pages, links, and selected text on Bluesky. Inspired by “[Share on Twitter](https://chromewebstore.google.com/detail/share-on-twitter/gkjgmeeoldebbdoehhngapnlfmdbmiie)”.
 
 ## What's this?
 This is a chrome extension I created for my personal use around June 2024. I'm publishing it because I couldn't find anyone else who created a similar extension. I hope it will be useful to you !😉

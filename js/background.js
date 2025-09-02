@@ -5,10 +5,10 @@ chrome.action.onClicked.addListener((tab) => {
 });
 
 chrome.contextMenus.removeAll(() => {
-    chrome.contextMenus.create({"title": "Share page on Bluesky", "contexts":["page"], "id": "post-page"});
-    chrome.contextMenus.create({"title": "Share selection on Bluesky", "contexts":["selection"], "id": "post-selection"});
-    chrome.contextMenus.create({"title": "Share link on Bluesky", "contexts":["link"], "id": "post-link"});
-    chrome.contextMenus.create({"title": "Share image on Bluesky", "contexts":["image"], "id": "post-image"});
+    chrome.contextMenus.create({"title": chrome.i18n.getMessage("context_share_page"), "contexts":["page"], "id": "post-page"});
+    chrome.contextMenus.create({"title": chrome.i18n.getMessage("context_share_selection"), "contexts":["selection"], "id": "post-selection"});
+    chrome.contextMenus.create({"title": chrome.i18n.getMessage("context_share_link"), "contexts":["link"], "id": "post-link"});
+    chrome.contextMenus.create({"title": chrome.i18n.getMessage("context_share_image"), "contexts":["image"], "id": "post-image"});
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {

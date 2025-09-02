@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initializeI18n();
+    
     chrome.storage.sync.get(['openas', 'newline', 'includeTitle'], (result) => {
         if (result.openas) {
             document.querySelector(`input[name="openas"][value="${result.openas}"]`).checked = true;
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (shareCurrentTabCommand && shareCurrentTabCommand.shortcut) {
             document.getElementById('shortcut-value').textContent = shareCurrentTabCommand.shortcut;
         } else {
-            document.getElementById('shortcut-value').textContent = 'None';
+            document.getElementById('shortcut-value').textContent = chrome.i18n.getMessage('shortcut_none');
         }
     });
 
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         radio.addEventListener('change', () => {
             const openas = document.querySelector('input[name="openas"]:checked').value;
             chrome.storage.sync.set({ openas }, () => {
-                displayMessage('Settings saved successfully!');
+                displayMessage(chrome.i18n.getMessage('settings_saved'));
             });
             updateRadioOptionUI();
         });
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('newline').addEventListener('change', () => {
         const newline = document.getElementById('newline').checked;
         chrome.storage.sync.set({ newline }, () => {
-            displayMessage('Settings saved successfully!');
+            displayMessage(chrome.i18n.getMessage('settings_saved'));
         });
         updateCheckboxUI();
     });
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const includeTitle = document.getElementById('includeTitle').checked;
         document.getElementById('newline').disabled = !includeTitle;
         chrome.storage.sync.set({ includeTitle }, () => {
-            displayMessage('Settings saved successfully!');
+            displayMessage(chrome.i18n.getMessage('settings_saved'));
         });
         updateCheckboxUI();
     });
@@ -112,4 +114,19 @@ function displayMessage(message) {
     messageClearId = setTimeout(() => {
         messageElement.textContent = '';
     }, 2300);
+}
+
+function initializeI18n() {
+    const elementsWithI18n = document.querySelectorAll('[data-i18n]');
+    elementsWithI18n.forEach(element => {
+        const messageKey = element.getAttribute('data-i18n');
+        const message = chrome.i18n.getMessage(messageKey);
+        if (message) {
+            if (element.tagName === 'TITLE') {
+                element.textContent = message;
+            } else {
+                element.textContent = message;
+            }
+        }
+    });
 }

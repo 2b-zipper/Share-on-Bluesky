@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Share on Bluesky Options</title>
+    <title data-i18n="options_title">Share on Bluesky Options</title>
     <link rel="stylesheet" href="options.css">
 </head>
 <body>
@@ -11,27 +11,27 @@
             <div class="logo">
                 <img src="images/128.png" alt="Share on Bluesky" />
             </div>
-            <h1>Share on Bluesky</h1>
-            <div class="subtitle">Configure your sharing preferences</div>
+            <h1 data-i18n="options_header">Share on Bluesky</h1>
+            <div class="subtitle" data-i18n="options_subtitle">Configure your sharing preferences</div>
         </div>
         
         <div class="main-content">
             <div class="left-column">
                 <div class="section">
-                    <div class="section-title">Opening Behavior</div>
+                    <div class="section-title" data-i18n="window_behavior">Opening Behavior</div>
                     <div class="option-group vertical">
                         <div class="radio-option" data-value="popup">
                             <input type="radio" name="openas" value="popup" id="popup-option" checked>
                             <div>
-                                <div class="option-label">Open as Popup</div>
-                                <div class="option-description">Opens in a small focused window for quick sharing</div>
+                                <div class="option-label" data-i18n="popup_option">Open as Popup</div>
+                                <div class="option-description" data-i18n="popup_description">Opens in a small focused window for quick sharing</div>
                             </div>
                         </div>
                         <div class="radio-option" data-value="tab">
                             <input type="radio" name="openas" value="tab" id="tab-option">
                             <div>
-                                <div class="option-label">Open as Tab</div>
-                                <div class="option-description">Opens in a new browser tab with full features</div>
+                                <div class="option-label" data-i18n="tab_option">Open as Tab</div>
+                                <div class="option-description" data-i18n="tab_description">Opens in a new browser tab with full features</div>
                             </div>
                         </div>
                     </div>
@@ -40,20 +40,20 @@
             
             <div class="right-column">
                 <div class="section">
-                    <div class="section-title">Content Options</div>
+                    <div class="section-title" data-i18n="post_content">Content Options</div>
                     <div class="option-group vertical">
                         <div class="checkbox-option">
                             <input type="checkbox" id="includeTitle" checked>
                             <div>
-                                <div class="option-label">Include page title</div>
-                                <div class="option-description">Add the webpage title to your post for better context</div>
+                                <div class="option-label" data-i18n="include_title">Include page title</div>
+                                <div class="option-description" data-i18n="include_title_description">Add the webpage title to your post for better context</div>
                             </div>
                         </div>
                         <div class="checkbox-option">
                             <input type="checkbox" id="newline">
                             <div>
-                                <div class="option-label">Add line break</div>
-                                <div class="option-description">Separate title and URL with a new line for readability</div>
+                                <div class="option-label" data-i18n="add_line_break">Add line break</div>
+                                <div class="option-description" data-i18n="add_line_break_description">Separate title and URL with a new line for readability</div>
                             </div>
                         </div>
                     </div>
@@ -62,11 +62,11 @@
         </div>
         
         <div class="section">
-            <div class="section-title">Keyboard Shortcut</div>
+            <div class="section-title" data-i18n="keyboard_shortcut">Keyboard Shortcut</div>
             <div class="shortcut-section">
-                <div class="shortcut-label">Current shortcut key</div>
+                <div class="shortcut-label" data-i18n="current_shortcut">Current shortcut key</div>
                 <div class="shortcut-value" id="shortcut-value">Alt+S</div><br>
-                <button class="shortcut-button" id="change-shortcut">Change Shortcut</button>
+                <button class="shortcut-button" id="change-shortcut" data-i18n="change_shortcut">Change Shortcut</button>
             </div>
         </div>
     </div>

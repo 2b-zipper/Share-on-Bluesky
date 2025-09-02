@@ -1,0 +1,71 @@
+{
+  "options_title": {
+    "message": "Share on Bluesky オプション"
+  },
+  "options_header": {
+    "message": "Share on Bluesky"
+  },
+  "options_subtitle": {
+    "message": "共有設定を設定する"
+  },
+  "window_behavior": {
+    "message": "ウィンドウの開き方"
+  },
+  "popup_option": {
+    "message": "ポップアップで開く"
+  },
+  "popup_description": {
+    "message": "すぐに共有できる小さなウィンドウで開きます"
+  },
+  "tab_option": {
+    "message": "新しいタブで開く"
+  },
+  "tab_description": {
+    "message": "すべての機能が使える新しいタブで開きます"
+  },
+  "post_content": {
+    "message": "投稿内容の設定"
+  },
+  "include_title": {
+    "message": "ページタイトルを含める"
+  },
+  "include_title_description": {
+    "message": "投稿にWebページのタイトルを追加します"
+  },
+  "add_line_break": {
+    "message": "タイトルとURLの間に改行を入れる"
+  },
+  "add_line_break_description": {
+    "message": "改行を入れて投稿を読みやすくします"
+  },
+  "keyboard_shortcut": {
+    "message": "キーボードショートカット"
+  },
+  "current_shortcut": {
+    "message": "現在のショートカット"
+  },
+  "change_shortcut": {
+    "message": "ショートカットを変更"
+  },
+  "settings_saved": {
+    "message": "設定を保存しました！"
+  },
+  "shortcut_none": {
+    "message": "未設定"
+  },
+  "context_share_page": {
+    "message": "このページをBlueskyでシェア"
+  },
+  "context_share_selection": {
+    "message": "選択したテキストをBlueskyでシェア"
+  },
+  "context_share_link": {
+    "message": "このリンクをBlueskyでシェア"
+  },
+  "context_share_image": {
+    "message": "この画像をBlueskyでシェア"
+  },
+  "extension_description": {
+    "message": "現在のページ、リンク、選択テキストをBlueskyで簡単にシェアできる拡張機能です。Share on Twitterからインスパイアされました。"
+  }
+}

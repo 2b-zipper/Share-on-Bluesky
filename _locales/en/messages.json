@@ -1,0 +1,71 @@
+{
+  "options_title": {
+    "message": "Share on Bluesky Options"
+  },
+  "options_header": {
+    "message": "Share on Bluesky"
+  },
+  "options_subtitle": {
+    "message": "Configure your sharing preferences"
+  },
+  "window_behavior": {
+    "message": "Window Behavior"
+  },
+  "popup_option": {
+    "message": "Open as Popup"
+  },
+  "popup_description": {
+    "message": "Opens in a compact window for quick sharing"
+  },
+  "tab_option": {
+    "message": "Open in New Tab"
+  },
+  "tab_description": {
+    "message": "Opens in a new browser tab with full functionality"
+  },
+  "post_content": {
+    "message": "Post Content"
+  },
+  "include_title": {
+    "message": "Include page title"
+  },
+  "include_title_description": {
+    "message": "Add the webpage title to your post"
+  },
+  "add_line_break": {
+    "message": "Add line break"
+  },
+  "add_line_break_description": {
+    "message": "Separate title and URL with a line break for better readability"
+  },
+  "keyboard_shortcut": {
+    "message": "Keyboard Shortcut"
+  },
+  "current_shortcut": {
+    "message": "Current shortcut"
+  },
+  "change_shortcut": {
+    "message": "Change Shortcut"
+  },
+  "settings_saved": {
+    "message": "Settings saved successfully!"
+  },
+  "shortcut_none": {
+    "message": "None"
+  },
+  "context_share_page": {
+    "message": "Share page on Bluesky"
+  },
+  "context_share_selection": {
+    "message": "Share selection on Bluesky"
+  },
+  "context_share_link": {
+    "message": "Share link on Bluesky"
+  },
+  "context_share_image": {
+    "message": "Share image on Bluesky"
+  },
+  "extension_description": {
+    "message": "Easily share current pages, links, and selected text on Bluesky. Inspired by Share on Twitter."
+  }
+}
