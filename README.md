@@ -15,7 +15,8 @@ This extension has enhanced functionality compared to Share on Twitter.
 
 ## Installation
 ### From Chrome Web Store
-This extension is currently under review by the Chrome Web Store. Once approved, it will be available for easy installation from the official store.
+This extension is available on the Chrome Web Store. You can install it directly from the official store:  
+**[Install Share on Bluesky from Chrome Web Store](https://chromewebstore.google.com/detail/share-on-bluesky/pnekmafmihcffgemmgcnkmclhgnhhfmi)**
 
 ### From CRX file
 1. [Download the latest CRX release](https://github.com/2b-zipper/Share-on-Bluesky/releases/latest) of the extension.
